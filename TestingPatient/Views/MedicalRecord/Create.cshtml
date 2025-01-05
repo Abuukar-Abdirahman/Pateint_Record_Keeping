@@ -1,0 +1,43 @@
+﻿@model TestingPatient.Models.MedicalRecord
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";
+}
+
+<h1 class="h3 mb-4 text-gray-800">Create Medical Record</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-gradient-primary text-white">
+        <h6 class="m-0 font-weight-bold text-white">Medical Record Information</h6>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="RecordDate" class="control-label">Record Date</label>
+                <input asp-for="RecordDate" class="form-control" type="datetime-local" />
+                <span asp-validation-for="RecordDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PatientId" class="control-label">Select Patient</label>
+                <select asp-for="PatientId" class="form-control" asp-items="ViewBag.PatientId">
+                    <option value="">-- Select Patient --</option>
+                </select>
+                <span asp-validation-for="PatientId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg">Create Medical Record</button>
+            </div>
+        </form>
+    </div>
+</div>

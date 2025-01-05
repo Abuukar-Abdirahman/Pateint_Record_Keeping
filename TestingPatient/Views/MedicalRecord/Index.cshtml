@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TestingPatient.Models.MedicalRecord>
+
+@{
+    ViewData["Title"] = "Medical Records";
+    Layout = "_AdminLayout";
+}
+
+<h1 class="h3 mb-4 text-gray-800">Medical Records</h1>
+
+<!-- Create New Button -->
+<p>
+    <a asp-action="Create" class="btn btn-primary btn-lg">Create New Medical Record</a>
+</p>
+
+<!-- Medical Record Table -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-gradient-primary text-white">
+        <h6 class="m-0 font-weight-bold text-white">Medical Records List</h6>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.RecordDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.Patient)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.RecordDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Patient.Name)</td>
+                        <td>
+                            <!-- Adding Icons to Action Buttons -->
+                            <div class="btn-group" role="group" aria-label="Actions">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a> |
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">
+                                    <i class="fas fa-info-circle"></i> Details
+                                </a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash"></i> Delete
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

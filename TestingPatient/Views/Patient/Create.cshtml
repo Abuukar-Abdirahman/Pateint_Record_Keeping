@@ -1,0 +1,64 @@
+﻿@model TestingPatient.Models.Patient
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";  // Ensure the correct layout is being used
+}
+
+<h1 class="h3 mb-4 text-gray-800">Create Patient</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-gradient-primary text-white">
+        <h6 class="m-0 font-weight-bold text-white">Create New Patient</h6>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <!-- Display validation errors -->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Name Field -->
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <!-- Date of Birth Field -->
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label">Date of Birth</label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Back Link -->
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary btn-lg">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,61 @@
+﻿@model TestingPatient.Models.Patient
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_AdminLayout";  // Ensure the correct layout is being used
+}
+
+<h1 class="h3 mb-4 text-gray-800">Patient Details</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-gradient-primary text-white">
+        <h6 class="m-0 font-weight-bold text-white">Patient Information</h6>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <!-- Name -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <!-- Email -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <!-- Phone Number -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <!-- Date of Birth -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateOfBirth)
+            </dd>
+        </dl>
+
+        <!-- Edit and Back Buttons -->
+        <div class="mt-3">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning btn-lg">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary btn-lg ml-2">Back to List</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

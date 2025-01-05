@@ -1,0 +1,138 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "_AdminLayout";
+}
+
+<!-- Container for the Dashboard -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    </div>
+
+    <!-- Row for Widgets (e.g., stats like total users, appointments, etc.) -->
+    <div class="row">
+        <!-- Example Widget 1: Total Patients -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total Patients</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">150</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Widget 2: Total Appointments -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total Appointments</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">75</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-check fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Widget 3: Total Prescriptions -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total Prescriptions</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-prescription-bottle-alt fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Widget 4: Total Billing -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total Billing</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$5000</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row for Tables (e.g., Patient List, Appointments) -->
+    <div class="row">
+        <!-- Example Table: Patient List -->
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Patient List</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="patientTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Appointment Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>john@example.com</td>
+                                    <td>(123) 456-7890</td>
+                                    <td>2024-12-22</td>
+                                    <td>
+                                        <a href="#" class="btn btn-info btn-sm">View</a>
+                                        <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                                <!-- Repeat similar rows for other patients -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Row for Graphs/Charts -->
+    <div class="row">
+        <!-- Example Chart -->
+        <div class="col-xl-6 col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Patient Trends</h6>
+                </div>
+                <div class="card-body">
+                    <canvas id="patientChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

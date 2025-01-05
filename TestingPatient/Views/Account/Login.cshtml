@@ -1,0 +1,145 @@
+﻿@using TestingPatient.ViewModels;
+@model LoginViewModel;
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    /* Full height container to vertically center the content */
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradient background */
+    }
+
+    /* This will center the account container in the middle of the screen */
+    .account-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 600px; /* Increased max width */
+        margin: 0 20px; /* Optional: Add some margin on the sides */
+    }
+
+    /* The form box where the login form is contained */
+    .account-box {
+        padding: 40px 60px; /* Increased padding */
+        background-color: white;
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        width: 100%;
+        max-width: 500px; /* Set a max width for form */
+        transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+        /* Hover effect on the form box */
+        .account-box:hover {
+            transform: translateY(-10px); /* Slight lift on hover */
+        }
+
+        /* Styling the title and form controls */
+        .account-box h2 {
+            font-size: 30px; /* Increased font size */
+            font-weight: bold;
+            color: #333; /* Dark color for the heading */
+        }
+
+        /* Styling the input fields */
+        .account-box .form-control {
+            border-radius: 10px; /* Rounded form inputs */
+            padding-left: 40px; /* Space for the icon */
+            height: 45px;
+            border: 2px solid #ddd; /* Soft border */
+            transition: border-color 0.3s ease; /* Smooth border color transition */
+        }
+
+            .account-box .form-control:focus {
+                border-color: #0072ff; /* Change border color on focus */
+            }
+
+        /* Add icons inside the input fields */
+        .account-box .form-control-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0072ff;
+        }
+
+        /* Button styling */
+        .account-box .btn {
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 8px; /* Rounded button */
+            transition: background-color 0.3s ease;
+            background-color: #0072ff; /* Blue button */
+            color: white;
+        }
+
+            .account-box .btn:hover {
+                background-color: #0056b3; /* Darker blue on hover */
+            }
+
+        /* Center the footer text and links */
+        .account-box p {
+            font-size: 18px;
+        }
+
+        .account-box .text-center {
+            margin-top: 20px;
+        }
+
+        .account-box .float-end {
+            font-size: 14px;
+        }
+</style>
+
+<div class="account-container">
+    <div class="account-box">
+        <h2 class="text-center mb-4">Login</h2>
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3 position-relative">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <i class="fas fa-envelope form-control-icon"></i> <!-- Email Icon -->
+            </div>
+            <div class="mb-3 position-relative">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" placeholder="Password" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <i class="fas fa-lock form-control-icon"></i> <!-- Password Icon -->
+            </div>
+            <div class="float-end mb-3">
+                <a asp-controller="Account" asp-action="VerifyEmail" class="text-decoration-none">
+                    Forgot password?
+                </a>
+            </div>
+            <div class="form-check mb-3">
+                <label class="form-check-label">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    @Html.DisplayNameFor(a => a.RememberMe)
+                </label>
+            </div>
+            <input type="submit" value="Login" class="btn w-100 p-2" />
+            <p class="text-center mt-2">
+                Don't have an account? <a asp-controller="Account" asp-action="Register" class="text-decoration-none">Register</a>
+            </p>
+            <!-- <div class="text-center mt-2">
+                <a asp-controller="Account" asp-action="VerifyEmail" class="text-decoration-none mt-3">Back</a>
+            </div> -->
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}

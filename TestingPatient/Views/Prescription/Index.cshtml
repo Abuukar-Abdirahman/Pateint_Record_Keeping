@@ -1,0 +1,69 @@
+﻿@model IEnumerable<TestingPatient.Models.Prescription>
+
+@{
+    ViewData["Title"] = "Prescriptions";
+    Layout = "_AdminLayout";
+}
+
+<h1 class="h3 mb-4 text-gray-800">Prescriptions</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary btn-lg">Create New Prescription</a>
+</p>
+
+<!-- Card for the table -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-gradient-primary text-white">
+        <h6 class="m-0 font-weight-bold text-white">Prescriptions List</h6>
+    </div>
+    <div class="card-body">
+        <!-- Make the table responsive by wrapping it in a div with class 'table-responsive' -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.First().Medication)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().Dosage)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().Instructions)</th>
+                        <th>Appointment</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Medication)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Dosage)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Instructions)</td>
+                            <td>
+                                @if (item.Appointment != null)
+                                {
+                                    @($"{item.Appointment.AppointmentDate.ToString("MM/dd/yyyy")} - Patient: {item.Appointment.Patient?.Name ?? "N/A"}")
+                                }
+                                else
+                                {
+                                    <span>N/A</span>
+                                }
+                            </td>
+                            <td>
+                                <!-- Adding Icons to Action Buttons -->
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">
+                                        <i class="fas fa-info-circle"></i> Details
+                                    </a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

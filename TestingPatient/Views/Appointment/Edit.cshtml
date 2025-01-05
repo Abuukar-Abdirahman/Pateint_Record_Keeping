@@ -1,0 +1,52 @@
+﻿@model TestingPatient.Models.Appointment
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_AdminLayout";
+}
+
+<h1 class="h3 mb-4 text-gray-800">Edit Appointment</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-gradient-primary text-white">
+        <h6 class="m-0 font-weight-bold text-white">Edit Appointment Information</h6>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="AppointmentDate" class="control-label">Appointment Date</label>
+                <input asp-for="AppointmentDate" class="form-control" type="datetime-local" />
+                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Reason" class="control-label">Reason</label>
+                <input asp-for="Reason" class="form-control" />
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PatientId" class="control-label">Select Patient</label>
+                <select asp-for="PatientId" class="form-control" asp-items="ViewBag.PatientId">
+                    <option value="">-- Select Patient --</option>
+                </select>
+                <span asp-validation-for="PatientId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DoctorId" class="control-label">Select Doctor</label>
+                <select asp-for="DoctorId" class="form-control" asp-items="ViewBag.DoctorId">
+                    <option value="">-- Select Doctor --</option>
+                </select>
+                <span asp-validation-for="DoctorId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>

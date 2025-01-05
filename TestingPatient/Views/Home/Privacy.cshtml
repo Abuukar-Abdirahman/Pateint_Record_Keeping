@@ -1,0 +1,1120 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Patient Record Keeping</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="~/Admin2/assets/img/favicon.png" rel="icon">
+    <link href="~/Admin2/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Admin2/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Admin2/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Admin2/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Admin2/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/Admin2/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Admin2/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="~/Admin2/assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Medilab
+    * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    * Updated: Aug 07 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif; /* Or your preferred font */
+        }
+
+        .main {
+            min-height: 100vh; /* Ensures the content fills the screen */
+            display: flex;
+            flex-direction: column;
+        }
+
+        #hero, #about, #services, #departments, #appointments, #patients {
+            height: 100%; /* Ensures that these sections take up full height */
+        }
+
+        .container {
+            max-width: 100%;
+            /* padding: 10px; */
+        }
+
+    </style>
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header sticky-top">
+
+        <div class="topbar d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+                <div class="contact-info d-flex align-items-center">
+                    <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">info@example.com</a></i>
+                    <i class="bi bi-phone d-flex align-items-center ms-4"><span>+252619590997</span></i>
+                </div>
+                <div class="social-links d-none d-md-flex align-items-center">
+                    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div><!-- End Top Bar -->
+
+        <div class="branding d-flex align-items-center">
+
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="~/Admin2/index.html" class="logo d-flex align-items-center me-auto">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename">Patient Record Keeping</h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="#hero" class="active">Home<br></a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#departments">Departments</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li class="dropdown">
+                            <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="#">Dropdown 1</a></li>
+                                <li class="dropdown">
+                                    <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a href="#">Deep Dropdown 1</a></li>
+                                        <li><a href="#">Deep Dropdown 2</a></li>
+                                        <li><a href="#">Deep Dropdown 3</a></li>
+                                        <li><a href="#">Deep Dropdown 4</a></li>
+                                        <li><a href="#">Deep Dropdown 5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Dropdown 2</a></li>
+                                <li><a href="#">Dropdown 3</a></li>
+                                <li><a href="#">Dropdown 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+                <a class="cta-btn d-none d-sm-block" asp-area="" asp-controller="Account" asp-action="Login">Make an Appointment</a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section light-background">
+            <!-- Background Image -->
+            <img src="~/Admin2/assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+            <div class="container position-relative">
+                <!-- Welcome Text -->
+                <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+                    <h2>Welcome to Patient Record Keeping</h2>
+                    <p>Developed to securely manage patient records, appointments, and medical history, improving healthcare efficiency.</p>
+                </div><!-- End Welcome -->
+                <!-- Content Row -->
+                <div class="content row gy-4">
+                    <!-- Why Choose Section -->
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+                            <h3>Why Choose Patient Record Keeping?</h3>
+                            <p>
+                                Our system offers secure, accessible, and efficient management of patient records. It ensures easy tracking of appointments, prescriptions, and medical history, allowing both patients and doctors to have quick access to important health data.
+                            </p>
+                            <div class="text-center">
+                                <a href="#about" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Why Box -->
+                    <!-- Features Section -->
+                    <div class="col-lg-8 d-flex align-items-stretch">
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="row gy-4">
+                                <!-- Icon Box 1: Patient Records Management -->
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                                        <i class="bi bi-person-lines-fill"></i>
+                                        <h4>Patient Records Management</h4>
+                                        <p>Efficiently store, access, and manage patient medical histories, ensuring healthcare providers have the data they need at their fingertips.</p>
+                                    </div>
+                                </div><!-- End Icon Box -->
+                                <!-- Icon Box 2: Appointment Scheduling -->
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                                        <i class="bi bi-calendar-check"></i>
+                                        <h4>Appointment Scheduling</h4>
+                                        <p>Patients can easily schedule and track appointments with their doctors, reducing the chances of missed appointments and enhancing communication.</p>
+                                    </div>
+                                </div><!-- End Icon Box -->
+                                <!-- Icon Box 3: Doctor Access -->
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                                        <i class="bi bi-person-check"></i>
+                                        <h4>Doctor Access</h4>
+                                        <p>Doctors have secure access to patient records and upcoming appointments, ensuring they are well-informed and prepared for each visit.</p>
+                                    </div>
+                                </div><!-- End Icon Box -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Content-->
+            </div>
+        </section>
+        <!-- /Hero Section -->
+        <!-- About Section -->
+        <section id="about" class="about section">
+
+            <div class="container">
+
+                <div class="row gy-4 gx-5">
+
+                    <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Replace with an appropriate image or keep the existing one -->
+                        <img src="~/Admin2/assets/img/about.jpg" class="img-fluid" alt="Patient Record Keeping">
+                        <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+                    </div>
+
+                    <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                        <h3>About Us</h3>
+                        <p>
+                            Our Patient Record Keeping system is designed to simplify the management of patient records, appointments, and medical history. We aim to provide healthcare providers with secure and easy access to critical data, improving the efficiency and quality of patient care. With our system, both patients and doctors can manage and track medical information, reducing errors and improving communication.
+                        </p>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-hospital-user"></i>
+                                <div>
+                                    <h5>Secure and Accessible Patient Records</h5>
+                                    <p>Our system allows secure storage and easy retrieval of patient records, ensuring healthcare providers always have the information they need to offer the best care.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <div>
+                                    <h5>Appointment Scheduling</h5>
+                                    <p>Patients can conveniently schedule appointments with their doctors, reducing the chance of missed appointments and improving workflow management.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-user-md"></i>
+                                <div>
+                                    <h5>Doctor Access to Patient Data</h5>
+                                    <p>Doctors have secure access to patient records, medical history, and upcoming appointments, allowing them to provide timely and informed care.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- /About Section -->
+        <!-- Stats Section -->
+        <section id="stats" class="stats section light-background">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <!-- Doctors Stat -->
+                    <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <div class="stats-item">
+                            <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Doctors</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <!-- Patients Stat -->
+                    <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                        <i class="fa-solid fa-users"></i>
+                        <div class="stats-item">
+                            <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Patients</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <!-- Appointments Stat -->
+                    <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                        <i class="fas fa-calendar-check"></i>
+                        <div class="stats-item">
+                            <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Appointments</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <!-- Active Records Stat -->
+                    <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                        <i class="fas fa-notes-medical"></i>
+                        <div class="stats-item">
+                            <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Active Medical Records</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Stats Section -->
+        <!-- Services Section -->
+        <section id="services" class="services section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive solution for managing patient records, appointments, and doctor access, ensuring efficient healthcare delivery.</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <!-- Patient Record Management Service -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-file-medical"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Patient Record Management</h3>
+                            </a>
+                            <p>Store, manage, and retrieve patient records securely, ensuring healthcare providers have access to critical patient data when needed.</p>
+                        </div>
+                    </div><!-- End Service Item -->
+                    <!-- Appointment Scheduling Service -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Appointment Scheduling</h3>
+                            </a>
+                            <p>Allow patients to easily schedule, view, and manage their appointments with doctors, reducing the chances of missed appointments.</p>
+                        </div>
+                    </div><!-- End Service Item -->
+                    <!-- Doctor Access Service -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Doctor Access</h3>
+                            </a>
+                            <p>Give doctors secure access to patient records and appointment schedules, enhancing communication and decision-making.</p>
+                        </div>
+                    </div><!-- End Service Item -->
+                    <!-- Prescription Management Service -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-prescription-bottle-alt"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Prescription Management</h3>
+                            </a>
+                            <p>Manage patient prescriptions and ensure correct medication usage and timely refills, improving patient care and treatment outcomes.</p>
+                        </div>
+                    </div><!-- End Service Item -->
+                    <!-- Medical Record Sharing Service -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Medical Record Sharing</h3>
+                            </a>
+                            <p>Securely share patient medical records with authorized healthcare providers, ensuring seamless patient care across different specialists.</p>
+                        </div>
+                    </div><!-- End Service Item -->
+                    <!-- Billing and Invoicing Service -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Billing and Invoicing</h3>
+                            </a>
+                            <p>Generate accurate invoices for patient services, track payments, and integrate with your financial system for streamlined billing operations.</p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Services Section -->
+        <!-- Appointment Section -->
+        <section id="appointment" class="appointment section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Appointment</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <form action="~/Admin2/forms/appointment.php" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                        </div>
+                        <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                        </div>
+                        <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 form-group mt-3">
+                            <input type="datetime-local" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required="">
+                        </div>
+                        <div class="col-md-4 form-group mt-3">
+                            <select name="department" id="department" class="form-select" required="">
+                                <option value="">Select Department</option>
+                                <option value="Department 1">Department 1</option>
+                                <option value="Department 2">Department 2</option>
+                                <option value="Department 3">Department 3</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group mt-3">
+                            <select name="doctor" id="doctor" class="form-select" required="">
+                                <option value="">Select Doctor</option>
+                                <option value="Doctor 1">Doctor 1</option>
+                                <option value="Doctor 2">Doctor 2</option>
+                                <option value="Doctor 3">Doctor 3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+                    </div>
+                    <div class="mt-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+                        <div class="text-center"><button type="submit">Make an Appointment</button></div>
+                    </div>
+                </form>
+
+            </div>
+
+        </section><!-- /Appointment Section -->
+        <!-- Departments Section -->
+        <section id="departments" class="departments section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Departments</h2>
+                <p>Our system supports various medical departments, enabling efficient management of patient data across different specialties.</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <ul class="nav nav-tabs flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">Cardiology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2">Neurology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">Orthopedics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4">Pediatrics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-5">Oncology</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-9 mt-4 mt-lg-0">
+                        <div class="tab-content">
+                            <!-- Cardiology Tab -->
+                            <div class="tab-pane active show" id="departments-tab-1">
+                                <div class="row">
+                                    <div class="col-lg-8 details order-2 order-lg-1">
+                                        <h3>Cardiology</h3>
+                                        <p class="fst-italic">Efficient management of cardiovascular patient data, including heart conditions and treatments.</p>
+                                        <p>Cardiology department specializes in diagnosing, treating, and managing heart-related conditions. With our system, cardiologists can easily access patient records, treatment plans, and appointment history for effective decision-making.</p>
+                                    </div>
+                                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                                        <img src="~/Admin2/assets/img/departments-1.jpg" alt="Cardiology" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Neurology Tab -->
+                            <div class="tab-pane" id="departments-tab-2">
+                                <div class="row">
+                                    <div class="col-lg-8 details order-2 order-lg-1">
+                                        <h3>Neurology</h3>
+                                        <p class="fst-italic">Manage neurological disorders and track patient progress with detailed records and appointments.</p>
+                                        <p>Neurology department deals with the diagnosis and treatment of nervous system disorders. Our system allows neurologists to access comprehensive medical histories, appointment schedules, and treatment plans for better patient outcomes.</p>
+                                    </div>
+                                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                                        <img src="~/Admin2/assets/img/departments-2.jpg" alt="Neurology" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Orthopedics Tab -->
+                            <div class="tab-pane" id="departments-tab-3">
+                                <div class="row">
+                                    <div class="col-lg-8 details order-2 order-lg-1">
+                                        <h3>Orthopedics</h3>
+                                        <p class="fst-italic">Track orthopedic patient data, including surgeries, treatments, and rehabilitation plans.</p>
+                                        <p>Orthopedics department focuses on diagnosing and treating musculoskeletal issues. With our system, orthopedic surgeons can easily monitor patients’ recovery, manage surgical histories, and plan for post-surgery rehabilitation.</p>
+                                    </div>
+                                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                                        <img src="~/Admin2/assets/img/departments-3.jpg" alt="Orthopedics" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pediatrics Tab -->
+                            <div class="tab-pane" id="departments-tab-4">
+                                <div class="row">
+                                    <div class="col-lg-8 details order-2 order-lg-1">
+                                        <h3>Pediatrics</h3>
+                                        <p class="fst-italic">Managing children's health records, vaccinations, and growth tracking in a secure system.</p>
+                                        <p>The Pediatrics department specializes in providing healthcare for infants, children, and adolescents. Our system allows pediatricians to track growth milestones, vaccinations, and medical histories in a secure and easily accessible way.</p>
+                                    </div>
+                                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                                        <img src="~/Admin2/assets/img/departments-4.jpg" alt="Pediatrics" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Oncology Tab -->
+                            <div class="tab-pane" id="departments-tab-5">
+                                <div class="row">
+                                    <div class="col-lg-8 details order-2 order-lg-1">
+                                        <h3>Oncology</h3>
+                                        <p class="fst-italic">Efficiently track cancer treatment, patient progress, and follow-up appointments.</p>
+                                        <p>Oncology focuses on diagnosing, treating, and managing cancer patients. With our system, oncologists can track the progress of treatments, view patient history, and schedule follow-ups for continuous care.</p>
+                                    </div>
+                                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                                        <img src="~/Admin2/assets/img/departments-5.jpg" alt="Oncology" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><!-- /Departments Section -->
+        <!-- Doctors Section -->
+        <section id="doctors" class="doctors section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Doctors</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="team-member d-flex align-items-start">
+                            <div class="pic"><img src="~/Admin2/assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Walter White</h4>
+                                <span>Chief Medical Officer</span>
+                                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""> <i class="bi bi-linkedin"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="team-member d-flex align-items-start">
+                            <div class="pic"><img src="~/Admin2/assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Sarah Jhonson</h4>
+                                <span>Anesthesiologist</span>
+                                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""> <i class="bi bi-linkedin"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="team-member d-flex align-items-start">
+                            <div class="pic"><img src="~/Admin2/assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>William Anderson</h4>
+                                <span>Cardiology</span>
+                                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""> <i class="bi bi-linkedin"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="team-member d-flex align-items-start">
+                            <div class="pic"><img src="~/Admin2/assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Amanda Jepson</h4>
+                                <span>Neurosurgeon</span>
+                                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""> <i class="bi bi-linkedin"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Doctors Section -->
+        <!-- Faq Section -->
+        <section id="faq" class="faq section light-background">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Frequently Asked Questions</h2>
+                <p>Here are some common questions about our Patient Record Keeping system. If you have any other inquiries, feel free to contact us!</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="faq-container">
+
+                            <!-- FAQ Item 1: What is Patient Record Keeping? -->
+                            <div class="faq-item faq-active">
+                                <h3>What is Patient Record Keeping?</h3>
+                                <div class="faq-content">
+                                    <p>Our Patient Record Keeping system securely manages patient data, including medical histories, appointments, prescriptions, and more. It ensures that healthcare providers have quick access to critical information when needed.</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div><!-- End Faq item-->
+                            <!-- FAQ Item 2: How do I make an appointment? -->
+                            <div class="faq-item">
+                                <h3>How do I make an appointment?</h3>
+                                <div class="faq-content">
+                                    <p>You can make an appointment by logging into the system and selecting the appropriate doctor and department. Once logged in, you can schedule an appointment at your convenience.</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div><!-- End Faq item-->
+                            <!-- FAQ Item 3: How do I access my medical records? -->
+                            <div class="faq-item">
+                                <h3>How do I access my medical records?</h3>
+                                <div class="faq-content">
+                                    <p>After logging into the system, you can easily view and manage your medical records. The system is designed to give you secure access to your health data and appointments.</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div><!-- End Faq item-->
+                            <!-- FAQ Item 4: Is my data secure? -->
+                            <div class="faq-item">
+                                <h3>Is my data secure?</h3>
+                                <div class="faq-content">
+                                    <p>Yes, your data is stored securely with encrypted access. Only authorized healthcare providers and users with permission can access the patient data, ensuring privacy and security.</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div><!-- End Faq item-->
+                            <!-- FAQ Item 5: Can I see my appointment history? -->
+                            <div class="faq-item">
+                                <h3>Can I see my appointment history?</h3>
+                                <div class="faq-content">
+                                    <p>Yes, you can view your past appointments, along with details like the doctor you visited, the reason for the visit, and any treatments prescribed. The system keeps a complete history of your appointments.</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div><!-- End Faq item-->
+                            <!-- FAQ Item 6: How can I contact support? -->
+                            <div class="faq-item">
+                                <h3>How can I contact support?</h3>
+                                <div class="faq-content">
+                                    <p>If you have any issues or need assistance, you can contact our support team through the "Contact Us" page. Our team is available to help with any technical issues or queries about your account or data.</p>
+                                </div>
+                                <i class="faq-toggle bi bi-chevron-right"></i>
+                            </div><!-- End Faq item-->
+
+                        </div>
+
+                    </div><!-- End Faq Column-->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Faq Section -->
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials section">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Testimonials</h3>
+                        <p>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="swiper init-swiper">
+                            <script type="application/json" class="swiper-config">
+                                {
+                                  "loop": true,
+                                  "speed": 600,
+                                  "autoplay": {
+                                    "delay": 5000
+                                  },
+                                  "slidesPerView": "auto",
+                                  "pagination": {
+                                    "el": ".swiper-pagination",
+                                    "type": "bullets",
+                                    "clickable": true
+                                  }
+                                }
+                            </script>
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="d-flex">
+                                            <img src="~/Admin2/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                                            <div>
+                                                <h3>Saul Goodman</h3>
+                                                <h4>Ceo &amp; Founder</h4>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div><!-- End testimonial item -->
+
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="d-flex">
+                                            <img src="~/Admin2/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0" alt="">
+                                            <div>
+                                                <h3>Sara Wilsson</h3>
+                                                <h4>Designer</h4>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div><!-- End testimonial item -->
+
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="d-flex">
+                                            <img src="~/Admin2/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0" alt="">
+                                            <div>
+                                                <h3>Jena Karlis</h3>
+                                                <h4>Store Owner</h4>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div><!-- End testimonial item -->
+
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="d-flex">
+                                            <img src="~/Admin2/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0" alt="">
+                                            <div>
+                                                <h3>Matt Brandon</h3>
+                                                <h4>Freelancer</h4>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div><!-- End testimonial item -->
+
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="d-flex">
+                                            <img src="~/Admin2/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt="">
+                                            <div>
+                                                <h3>John Larson</h3>
+                                                <h4>Entrepreneur</h4>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div><!-- End testimonial item -->
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- /Testimonials Section -->
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Gallery</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row g-0">
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/Admin2/assets/img/gallery/gallery-1.jpg" class="glightbox" data-gallery="images-gallery">
+                                <img src="~/Admin2/assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div><!-- End Gallery Item -->
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/Admin2/assets/img/gallery/gallery-2.jpg" class="glightbox" data-gallery="images-gallery">
+                                <img src="~/Admin2/assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div><!-- End Gallery Item -->
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/Admin2/assets/img/gallery/gallery-3.jpg" class="glightbox" data-gallery="images-gallery">
+                                <img src="~/Admin2/assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div><!-- End Gallery Item -->
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/Admin2/assets/img/gallery/gallery-4.jpg" class="glightbox" data-gallery="images-gallery">
+                                <img src="~/Admin2/assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div><!-- End Gallery Item -->
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/Admin2/assets/img/gallery/gallery-5.jpg" class="glightbox" data-gallery="images-gallery">
+                                <img src="~/Admin2/assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div><!-- End Gallery Item -->
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/Admin2/assets/img/gallery/gallery-6.jpg" class="glightbox" data-gallery="images-gallery">
+                                <img src="~/Admin2/assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div><!-- End Gallery Item -->
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="assets/img/gallery/gallery-7.jpg" class="glightbox" data-gallery="images-gallery">
+                                <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div><!-- End Gallery Item -->
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="assets/img/gallery/gallery-8.jpg" class="glightbox" data-gallery="images-gallery">
+                                <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div><!-- End Gallery Item -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Gallery Section -->
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>If you have any questions or need assistance, feel free to reach out to us!</p>
+            </div><!-- End Section Title -->
+
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div><!-- End Google Maps -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4">
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Mogadishu, Banadir, Somalia</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                            <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Call Us</h3>
+                                <p>+252 619 590 997</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>admin@gmail.com</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                    </div>
+
+                    <div class="col-lg-8">
+                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                    <button type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- End Contact Form -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Contact Section -->
+
+
+    </main>
+
+    <footer id="footer" class="footer light-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">Patient Record Keeping</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>Mogadisho Somalia</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+252619590997</span></p>
+                        <p><strong>Email:</strong> <span>info@example.com</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Product Management</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Hic solutasetp</h4>
+                    <ul>
+                        <li><a href="#">Molestiae accusamus iure</a></li>
+                        <li><a href="#">Excepturi dignissimos</a></li>
+                        <li><a href="#">Suscipit distinctio</a></li>
+                        <li><a href="#">Dilecta</a></li>
+                        <li><a href="#">Sit quas consectetur</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Nobis illum</h4>
+                    <ul>
+                        <li><a href="#">Ipsam</a></li>
+                        <li><a href="#">Laudantium dolorum</a></li>
+                        <li><a href="#">Dinera</a></li>
+                        <li><a href="#">Trodelas</a></li>
+                        <li><a href="#">Flexo</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Pateint Record Keeping</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://github.com/Abuukar-Abdirahman">Abukar Abdirahman</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Admin2/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Admin2/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/Admin2/assets/vendor/aos/aos.js"></script>
+    <script src="~/Admin2/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/Admin2/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/Admin2/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="~/Admin2/assets/js/main.js"></script>
+
+</body>
+
+</html>
